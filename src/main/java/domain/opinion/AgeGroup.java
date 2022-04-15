@@ -23,6 +23,8 @@ public enum AgeGroup {
         return ageGroup;
     }
 
+    public int getKey() { return key; }
+
     @Override
     public String toString() {
         return ageGroupStr;

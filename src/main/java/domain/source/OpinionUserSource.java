@@ -19,7 +19,7 @@ public class OpinionUserSource implements SourceFunction<OpinionUser> {
     @Override
     public void run(SourceContext<OpinionUser> ctx) throws Exception {
         Instant startTime = Instant.parse("2022-04-15T08:00:00Z");
-        Instant endTime = Instant.parse("2022-04-15T08:01:00Z");
+        Instant endTime = Instant.parse("2022-04-15T08:20:00Z");
 
         Random timeRandom = new Random();
         timeRandom.setSeed(System.currentTimeMillis());
@@ -39,7 +39,7 @@ public class OpinionUserSource implements SourceFunction<OpinionUser> {
             // Update time
             startTime = startTime.plusSeconds(timeRandom.nextLong() % timeInterval);
 
-            Thread.sleep(Time.milliseconds(500).toMilliseconds());
+//            Thread.sleep(Time.milliseconds(30).toMilliseconds());
         }
     }
 

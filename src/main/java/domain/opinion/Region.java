@@ -19,6 +19,10 @@ public enum Region {
         this.regionStr = regionStr;
     }
 
+    public int getKey() {
+        return key;
+    }
+
     @Override
     public String toString() {
         return regionStr;
