@@ -40,8 +40,7 @@ public class OpinionUserGenerator {
             questions.add(answer);
         }
 
-        return new OpinionUser(this.userId, ageGroup, "010-0000-0000", region,
-                questions, this.startTime);
+        return new OpinionUser(this.userId, ageGroup, region, questions, this.startTime);
     }
 
 }

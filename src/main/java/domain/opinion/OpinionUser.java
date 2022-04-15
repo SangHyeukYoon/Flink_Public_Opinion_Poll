@@ -12,18 +12,16 @@ public class OpinionUser implements Serializable {
 
     public int userId;
     public AgeGroup ageGroup;
-    public String phoneNumber;
     public Region region;
 
     public ArrayList<ArrayList<Integer>> questions;
 
     public Instant startTime;
 
-    public OpinionUser(int userId, AgeGroup ageGroup, String phoneNumber, Region region,
+    public OpinionUser(int userId, AgeGroup ageGroup, Region region,
                        ArrayList<ArrayList<Integer>> questions, Instant startTime) {
         this.userId = userId;
         this.ageGroup = ageGroup;
-        this.phoneNumber = phoneNumber;
         this.region = region;
         this.questions = questions;
         this.startTime = startTime;
@@ -61,7 +59,6 @@ public class OpinionUser implements Serializable {
         OpinionUser user = (OpinionUser) o;
 
         return ageGroup.equals(user.ageGroup) &&
-                phoneNumber.equals(user.phoneNumber) &&
                 region.equals(user.region) &&
                 questions.equals(user.questions) &&
                 startTime.equals(user.startTime);
@@ -69,7 +66,7 @@ public class OpinionUser implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ageGroup, phoneNumber, region, questions, startTime);
+        return Objects.hash(ageGroup, region, questions, startTime);
     }
 
     public long getEventTimeMillis() {
